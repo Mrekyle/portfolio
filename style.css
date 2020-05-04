@@ -26,7 +26,7 @@ body, html, header {
 }
 
 .buffer {
-	height: 60px;
+	height: 100px;
 }
 
 .btn {
@@ -55,11 +55,25 @@ hr {
 	border-width: 3px;
 	max-width: 65px;
 }
+ 
+h1 {
+	text-align: center;
+	padding-left: 100px;
+}
 
 /*			NAVIGATION 			*/
+
+@media only screen and (max-width: 600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 0;
+    }
+}
  
  .main-nav {
  	display: flex;
+ 	background-color: grey;
+ 	width: 100%;
  }
 
 li {
@@ -70,24 +84,77 @@ li {
 a {
 	padding: 15px;
 	font-size: 23px;
-	margin-left: 20px;
+	margin-left: 75px;
 }
 
 a:hover {
 	text-decoration: none;
 }
 
+
 /*			ABOUT ME			*/
 
+.about {
+	padding-top: 80px;
+}
 
 /*			MY PROJECTS			*/
 
 
 /*			CONTACT 			*/
 
+.contact-question {
+	padding-bottom: 25px;
+}
+
+.contact {
+	text-align: center;
+}
+
+.contact-form {
+
+}
+
+.form-inputs-1 {
+	box-sizing: border-box;
+}
+
+.submit-btn {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-start: 3;
+	grid-column-end: 4;
+	justify-content: center;
+}
+
+input {
+	width: 470px;
+	margin-bottom: 8px;
+}
+
+.submit-btn {
+
+}
 
 /*			FOOTER 				*/
 
+footer {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
 
+.footer-txt {
+	display: grid;
+	grid-column-start: 2;
+	grid-column-end: 3;
+}
 
+.footer-links {
+	display: flex;
+	text
+}
+
+#links {
+	padding-left: 20px;
+}
 
