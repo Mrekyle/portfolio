@@ -1,0 +1,93 @@
+body, html, header {
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*			LANDING  PAGE 			*/
+
+.my-name {
+	color: red;
+	text-align: center;
+	font-size: 2em;
+}
+
+.name-text {
+	color: white;
+	text-align: center;
+	font-size: 2em;
+}
+
+.opening {
+	background-image: url(header.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.buffer {
+	height: 60px;
+}
+
+.btn {
+	font-weight: 700px;
+	border-radius: 300px;
+	text-transform: uppercase;
+}
+
+.btn-primary {
+	background-color: #f05f44;
+	border-color: #f05f44;
+}
+
+.btn:hover {
+	background-color: #DE3718;
+	border-color: #DE3718;
+	border-width: 4px;
+}
+
+.btn-xl {
+	padding: 1rem 2rem;
+}
+
+hr {
+	border-color: #f05f44;
+	border-width: 3px;
+	max-width: 65px;
+}
+
+/*			NAVIGATION 			*/
+ 
+ .main-nav {
+ 	display: flex;
+ }
+
+li {
+	list-style: none;
+	display: flex;
+}
+
+a {
+	padding: 15px;
+	font-size: 23px;
+	margin-left: 20px;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/*			ABOUT ME			*/
+
+
+/*			MY PROJECTS			*/
+
+
+/*			CONTACT 			*/
+
+
+/*			FOOTER 				*/
+
+
+
+
