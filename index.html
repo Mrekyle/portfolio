@@ -2,18 +2,10 @@
 <html>
   <head>
     <title>Kyle Chart - Web Dev</title>
-
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-    <!-- Bootstrap CSS from a CDN. This way you don't have to include the bootstrap file yourself -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    
-    <!-- Your own stylesheet -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="./fonts/Raleway-Regular.ttf">
   </head>
@@ -21,31 +13,29 @@
     <div class="container d-flex align-items-center h-100">
       <div class="row">
         <header class="text-center col-12">
-          <p class="name-text">Hello, I'm<span class="my-name"> Kyle Chart.</span></p>
-          <p class="name-text">And I am a Full-stack Developer.</p>
+          <h1 class="name-text">Hello, I'm<span class="my-name"> Kyle Chart.</span></h1>
+          <h1 class="name-text">And I am a Full-stack Developer.</h1>
         </header>
         <div class="buffer col-12"></div>
         <section class="text-center col-12">
-          <hr>
           <a href="">
              <button class="btn btn-primary btn-xl">Find Out More!</button>
           </a>
         </section>
       </div>
     </div>
+    <nav class="nav">
+         <ul class="main-nav">
+            <li><a class="font-family" href="#">About</a></li>
+            <li><a class="font-family" href="#">My Projects</a></li>
+            <li><a class="font-family" href="#">Contact</a></li>
+          </ul>
+    </nav>
   </header>
   <body>
-    <section class="nav">
-      <nav class="nav">
-        <ul class="main-nav">
-          <li><a class="font-family" href="#">About</a></li>
-          <li><a class="font-family" href="#">My Projects</a></li>
-          <li><a class="font-family" href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </section>
       <section class="about">
         <div>
+          <h3 class="text-center">About Me</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -58,6 +48,7 @@
       </section>
     <section class="my-projects">
         <div>
+          <h3 class="text-center">My Projects</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -68,16 +59,23 @@
         </div>
     </section>
       <section class="contact">
-        <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <P>WORKING CONTACT FORM, LINKS ABOVE FOOTER?</P>
-        </div>
+        <h3 class="text-center">Contact</h2>
+        <hr>
+        <div class="contact-question">Have a question? Need something built? Or want to work together?</div>
+        <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required=""><br>
+            <input type="email" name="email" placeholder="Enter Email" required=""><br>
+            <textarea rows="4" cols="50" maxlength="3000" name="yourMessage" required="" placeholder="Your Message."></textarea><br>
+            <div class="submit-btn"><button class="submit-btn">Submit</button><br>
+        </form>
       </section>
-    <footer>&copy 2020 - Kyle Chart, Full-stack Developer.</footer>
+    <footer>
+      <div class="footer-txt">&copy 2020 - Kyle Chart, Full-stack Developer.</div>
+        <div class="footer-links">
+          <p id="links">Linkdn</p>
+          <p id="links">Codepen.io</p>
+          <p id="links">Github</p>
+        </div>
+  </footer>
 </body>
 </html>
