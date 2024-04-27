@@ -1,0 +1,88 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Kyle Chart">
+
+    {% block css %}
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://kit.fontawesome.com/6ab0a7bbf9.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
+    {% endblock %}
+
+    {% block extra_css %}
+
+    {% endblock %}
+
+    {% block js %}
+
+    {% endblock %}
+
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+    <header>
+        <nav class="bg-black dark:bg-black fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="{% url 'index' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="media/memoji.jpg" class="memoji" alt="Kyle Chart">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Kyle Chart</span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <a href="" class="text-white" rel="opener" target="_blank"><i class="icon fa-brands fa-linkedin"></i></a>
+                    <a href="" class="text-white" rel="opener" target="_blank"><i class="icon fa-brands fa-github"></i></a>
+                    <a href="" class="text-white" rel="opener" target="_blank"><i class="icon fa-brands fa-instagram"></i></a>
+                    <a href="mailto:kylechart@gmail.com" class="text-white" rel="opener"><i class="icon fas fa-envelope"></i></a>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-black md:dark:bg-black dark:border-black">
+                        <li>
+                            <a href="#" class="block py-4 px-5 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">about</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-4 px-5 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#" class="block py-4 px-5 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">work with me</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </nav>
+    </header>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <footer>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#000000" fill-opacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,170.7C672,181,768,235,864,234.7C960,235,1056,181,1152,176C1248,171,1344,213,1392,234.7L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        <div class="footer-container flex justify-around">
+            <div class="copy-info ps-5 pb-5">
+                <p class="">&copy <span>Kyle Chart</span> <script>document.write(new Date().getFullYear())</script></p>
+            </div>
+            <div class="user-navigation">
+                <ul class="text-white inline">
+                    <li class="">About</li>
+                    <li class="">Portfolio</li>
+                    <li class="">Work With Me</li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="" class="text-white" rel="opener" target="_blank"><i class="icon fa-brands fa-linkedin"></i></a>
+                <a href="" class="text-white" rel="opener" target="_blank"><i class="icon fa-brands fa-github"></i></a>
+                <a href="" class="text-white" rel="opener" target="_blank"><i class="icon fa-brands fa-instagram"></i></a>
+                <a href="mailto:kylechart@gmail.com" class="text-white" rel="opener"><i class="icon fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
