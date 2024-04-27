@@ -19,6 +19,8 @@ ul ,li {
     text-decoration: none;
 }
 
+/* color:#1a1a1a; */
+
 /* NAVBAR */
 
 .header-links {
@@ -31,18 +33,26 @@ ul ,li {
     border-radius: 50%;
 }
 
+.icon {
+    font-size: 1.5rem;
+    margin: 10px;
+    padding: 3px;
+}
+
 /* HEADER CONTAINER */
 
 .header-container {
     margin-top: 5.5rem;
-    height: 40rem;
+    height: 35rem;
     background-color: aqua;
 }
 
 /* ABOUT ME CONTAINER */
 
 .about-container {
+    margin-top: 0 auto;
     height: 40rem;
+    background-color: black;
 }
 
 /* PORTFOLIO CONTAINER  */
@@ -69,3 +79,33 @@ ul ,li {
 .footer-container p {
     color: white;
 }
+
+
+.hr-text {
+    border: 0;
+    line-height: 1em;
+    position: relative;
+    text-align: center;
+    height: 1.5em;
+    font-size: 50px;
+    margin: 3px 15px;
+  }
+  
+  .hr-text::before {
+      content: "";
+      background: linear-gradient(to right, transparent, white, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+  }
+  
+  .hr-text::after {
+      content: attr(data-content);
+      position: relative;
+      padding: 0 15px;
+      line-height: 1.5em;
+      color: white;
+      background-color: black;
+  }
