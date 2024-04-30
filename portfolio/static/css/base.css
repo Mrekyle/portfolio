@@ -63,7 +63,7 @@ ul ,li {
 /* WORK WITH ME CONTAINER  */
 
 .work-container {
-    height: 30rem;
+    height: 33rem;
     background-color: white;
 }
 
@@ -94,6 +94,18 @@ ul ,li {
     line-height: 1.5em;
     color: #1a1a1a;
     background-color: white;
+}
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    /* z-index means that it will always be placed on top of everything if the number is higher than everything else  */
+    z-index: 9999999999;
+}
+
+.custom-alert {
+    overflow: visible;
 }
 
 /* FOOTER CONTAINER  */
