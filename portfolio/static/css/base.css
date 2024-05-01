@@ -19,6 +19,10 @@ ul ,li {
     text-decoration: none;
 }
 
+.t-bal {
+    text-wrap: balance;
+}
+
 /* color:#1a1a1a; */
 
 /* NAVBAR */
@@ -57,7 +61,7 @@ ul ,li {
 /* PORTFOLIO CONTAINER  */
 
 .portfolio-container {
-    height: 40rem;
+    height: 43rem;
 }
 
 /* WORK WITH ME CONTAINER  */
@@ -98,7 +102,7 @@ ul ,li {
 
 .message-container {
     position: fixed;
-    top: 72px;
+    top: 90px;
     right: 15px;
     /* z-index means that it will always be placed on top of everything if the number is higher than everything else  */
     z-index: 9999999999;
