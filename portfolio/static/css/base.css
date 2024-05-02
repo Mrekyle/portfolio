@@ -64,6 +64,16 @@ ul ,li {
     height: 43rem;
 }
 
+.card {
+    max-height: 31rem;
+    max-width: 16rem;
+}
+
+.card-img {
+    height: 200px;
+    width: 300px;
+}
+
 /* WORK WITH ME CONTAINER  */
 
 .work-container {
