@@ -82,5 +82,26 @@
             </div>
         </div>
     </footer>
+
+    {% block post_loadJS %}
+    <script>
+        const toastElList = document.querySelectorAll('.toast')
+        const toastList = [...toastElList].map(toastEl => new bootstrap.Toast(toastEl, option))
+    </script>
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastTrigger.addEventListener('click', () => {
+            toastBootstrap.show()
+        })
+        }
+    </script>
+    <script>
+        document.getElementByClassName("toast").toast('show');
+    </script>
+    {% endblock %}
 </body>
 </html>
