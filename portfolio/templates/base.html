@@ -39,13 +39,13 @@
         {% for message in messages %}
             {% with message.level as level %}
                 {% if level == 40 %}
-                    
+                {% includes 'includes/toats/toast_error.html' %}
                 {% elif level == 30 %}
-                    
+                {% includes 'includes/toats/toast_warning.html' %}
                 {% elif level == 25 %}
-                    
+                    {% includes 'includes/toats/toast_success.html' %}
                 {% else %}
-                    
+                {% includes 'includes/toats/toast_info.html' %}
                 {% endif %}
 
 
