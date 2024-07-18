@@ -4,12 +4,19 @@ from django.contrib import messages
 
 from django.core.mail import send_mail
 
+from .models import Skill_Cards, offerings, Current_Projects, Work_History
+
 # Create your views here.
 
 def index(request):
     """
         Index page
     """
+
+    skills = Skill_Cards
+    offerings = offerings
+    current_projects = Current_Projects
+    work = Work_History
 
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -55,7 +62,10 @@ def index(request):
     template = 'index.html'
 
     context = {
-
+        'skills': skills,
+        'offerings': offerings,
+        'project': current_projects,
+        'work': work,
     }
 
     return render(request, template, context)

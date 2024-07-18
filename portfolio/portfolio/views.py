@@ -12,3 +12,16 @@ def handler404(request, exception):
     }
 
     return render(request, template, context)
+
+def handler500(request):
+    """
+        Error 500 handling
+    """
+
+    template = 'errors/500.html'
+
+    context = {
+
+    }
+
+    return render(request, template, context)

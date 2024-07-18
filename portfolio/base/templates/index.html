@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-    <!-- Kyle Chart - Web Developer -->
+    Kyle Chart - Web Developer
 {% endblock %}
 
 {% block content %}
@@ -16,9 +16,9 @@
                     </div>
                     <div class="col-6">
                         <div class="row">
-                            <p class="">Hi, Im <h3><span class="">Kyle Chart.</span></h3><br> A UK Based web developer</p>
-                            <p class="">I'm a Full Stack Web Developer from Essex, UK. I have developed multiple different applications from static websites to full scale e-commerce stores.</p>
-                            <p class="">A passionate Web Developer ready to transform your business and take it to the next level. By turning your dreams into reality.</p>
+                            <p class="">Hi, Im <h3><span class="">Kyle Chart.</span></h3><br> A UK Based Full Stack Developer</p>
+                            <p class="">I'm from Essex, UK. I have developed multiple different applications from static websites to full scale e-commerce stores.</p>
+                            <p class="">A passionate Web Developer ready to transform your business and take it to the next level. By turning your dreams into reality & offering an all in one solution to your needs.</p>
                             <div class="buttons">
                                 <a href="" class="btn btn-hire" aria-label="">Hire Me</a>
                             </div>
@@ -28,7 +28,7 @@
                                 <a class="icon" href="https://www.instagram.com/kylechart_" target="_blank" rel="nofollow" aria-label=""><i class="fa-brands fa-github"></i></a>
                                 <a class="icon" href="https://github.com/Mrekyle" target="_blank" rel="nofollow" aria-label="Opens instagram"><i class="fa-brands fa-instagram"></i></a>
                                 <a class="icon" href="https://www.linkedin.com/in/kylechart/" target="_blank" rel="nofollow" aria-label=""><i class="fa-brands fa-linkedin"></i></a>
-                                <a class="icon" href="mailto:MYEMAIL" target="_blank" rel="nofollow" aria-label=""><i class="fa-solid fa-envelope"></i></a>
+                                <a class="icon" href="" target="_blank" rel="nofollow" aria-label=""><i class="fa-solid fa-envelope"></i>go to hire me </a>
                             </div>
                         </div>
                     </div>
@@ -41,27 +41,87 @@
                     <div class="col-12">
                         <div class="about-me"></div>
                         <div class="skills">
-                            <div class="card">
-                                <div class="card-img"><img alt="" class="skill-img" src=""></div>
-                            </div>
+                            {% for skills in skills %}
+                                {% if skills.image %}
+                                    <div class="card">
+                                        <div class="card-img"><img alt="{{ skills.name }}" class="skill-img" src="{{ skills.image }}"></div>
+                                    </div>
+                                {% else %}
+                                    <div class="card">
+                                        <div class="card-img"><img alt="" class="skill-img" src="{{ MEDIA_URL }}noimage.png"></div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
                         </div>
                         <div class="my-services">
                             <div class="">
                                 <ul class="">
-                                    <li>Bug Bashing</li>
+                                    {% for offer in offerings %}
+                                        {% if offer.name %}
+                                            <li class="">{{ offer.name }}</li>
+                                        {% endfor %}
+                                    {% endfor %}
+                                    <!-- <li>Bug Bashing</li>
                                     <li>Email Development</li>
                                     <li>SEO</li>
+                                    <li>Analytics</li>
                                     <li>Social Media Management</li>
                                     <li>Video Editing</li>
-                                    <li>Website Development</li>
                                     <li>Website Design</li>
+                                    <li>Website Development</li>
+                                    <li>Website Deployment</li>
                                     <li>Website Management</li>
-                                    <li>Website Maintenance</li>
+                                    <li>Website Maintenance</li> -->
                                 </ul>
                             </div>
                         </div>
-                        <div class="work-history"></div>
-                        <div class="current-projects"></div>
+                        <div class="work-history">
+                            <div class="">
+                                {% for history in work %}
+                                    <div class="card">
+                                        {% if history.image %}
+                                            <div class="card-img">
+                                                <img class="" alt="{{ history.name }}" src="{{ history.image }}">
+                                            </div>
+                                        {% else %}
+                                        {% endif %}
+                                        <div class="card-title">
+                                            <p class="">{{ history.name }}</p>
+                                        </div>
+                                        <div class="dates">
+                                            <span class="small">{{ history.dates }}</span>
+                                        </div>
+                                        <hr class="work-card">
+                                        <div class="card-body">
+                                            <p class="">{{ history.bio }}</p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="current-projects">
+                            <div class="">
+                                {% for projects in project %}
+                                    <div class="card">
+                                        <div class="card-title">
+                                            <p class=""></p>
+                                        </div>
+                                        {% if projects.image %}
+                                            <div class="card-img"><img alt="{{ skills.name }}" class="skill-img" src="{{ skills.image }}"></div>
+                                        {% else %}
+                                            <div class="card-img"><img alt="" class="skill-img" src="{{ MEDIA_URL }}noimage.png"></div>
+                                        {% endfor %}
+                                        <div class="card-body">
+                                            <p>{{ projects.bio }}</p>
+                                        </div>
+                                        <div class="card-links">
+                                            <span class="">{{ projects.git_link }}</span>
+                                            <span class="">{{ projects.live_site }}</span>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
                         <div class="contact-me">
                             <div class="form">
                                 <form class="contact1-form validate-form" method="POST" enctype="multipart/form-data">
@@ -87,6 +147,7 @@
                                         <button class="contact1-form-btn">
                                             <span>Get in Touch!<i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
                                         </button>
+                                        <input type="checkbox" class="checkbox" name="send-copy"><span class="">Send me a copy</span>
                                     </div>
                                     <div class="finfo-container">
                                         {% for message in messages %}
