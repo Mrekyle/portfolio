@@ -1,0 +1,16 @@
+TO DO:
+
+Build and style form
+Build and style work history cards
+Build and style current projects cards
+Fix linking on current projects cards
+Style my bio
+Style buttons
+Style social icons
+Finish CV Container styling
+
+Style entire website
+
+Build in cloudinary storage for new projects etc..
+
+Finish email functionality
