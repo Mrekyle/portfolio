@@ -11,71 +11,63 @@
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="about-container">
                 <div class="row">
-                    <div class="col-6">
-                        <img alt="" src="" class="">
-                    </div>
-                    <div class="col-6">
+                    <img alt="Image of me" src="{% static '../media/memoji.jpg' %}" class="my-image">
                         <div class="row">
-                            <p class="">Hi, Im <h3><span class="">Kyle Chart.</span></h3><br> A UK Based Full Stack Developer</p>
+                            <p class="">Hi, Im <span class="">Kyle Chart.</span><br> A UK Based Full Stack Developer</p>
                             <p class="">I'm from Essex, UK. I have developed multiple different applications from static websites to full scale e-commerce stores.</p>
                             <p class="">A passionate Web Developer ready to transform your business and take it to the next level. By turning your dreams into reality & offering an all in one solution to your needs.</p>
-                            <div class="buttons">
-                                <a href="" class="btn btn-hire" aria-label="">Hire Me</a>
-                            </div>
+                        <div class="buttons">
+                            <a href="" class="btn btn-hire" aria-label="">Hire Me</a>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <a class="icon" href="https://www.instagram.com/kylechart_" target="_blank" rel="nofollow" aria-label=""><i class="fa-brands fa-github"></i></a>
-                                <a class="icon" href="https://github.com/Mrekyle" target="_blank" rel="nofollow" aria-label="Opens instagram"><i class="fa-brands fa-instagram"></i></a>
-                                <a class="icon" href="https://www.linkedin.com/in/kylechart/" target="_blank" rel="nofollow" aria-label=""><i class="fa-brands fa-linkedin"></i></a>
-                                <a class="icon" href="" target="_blank" rel="nofollow" aria-label=""><i class="fa-solid fa-envelope"></i>go to hire me </a>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <a class="icon" href="https://www.instagram.com/kylechart_" target="_blank" rel="nofollow" aria-label=""><i class="fa-brands fa-github"></i></a>
+                            <a class="icon" href="https://github.com/Mrekyle" target="_blank" rel="nofollow" aria-label="Opens instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a class="icon" href="https://www.linkedin.com/in/kylechart/" target="_blank" rel="nofollow" aria-label=""><i class="fa-brands fa-linkedin"></i></a>
+                            <a class="icon" href="" target="_blank" rel="nofollow" aria-label=""><i class="fa-solid fa-envelope"></i>go to hire me </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="cv-container overflow-auto"> <!-- Needs max height--> 
+            <div class="cv-container overflow-auto">
                 <div class="row">
                     <div class="col-12">
                         <div class="about-me"></div>
                         <div class="skills">
+                            <h3 class="">My Skills</h3>
+                            <div class="row justify-content-center">
                             {% for skills in skills %}
-                                {% if skills.image %}
-                                    <div class="card">
-                                        <div class="card-img"><img alt="{{ skills.name }}" class="skill-img" src="{{ skills.image }}"></div>
-                                    </div>
-                                {% else %}
-                                    <div class="card">
-                                        <div class="card-img"><img alt="" class="skill-img" src="{{ MEDIA_URL }}noimage.png"></div>
-                                    </div>
-                                {% endif %}
-                            {% endfor %}
+                                <div class="col-3 pad-l-5">
+                                    {% if skills.image %}
+                                        <div class="skill-card">
+                                            <div class=""><img alt="{{ skills.name }}" class="skill-img" src="{{ skills.image_url }}"></div>
+                                        </div>
+                                    {% else %}
+                                        <div class="card">
+                                            <div class="card-img"><img alt="" class="skill-img" src="{{ MEDIA_URL }}noimage.png"></div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                {% endfor %}
+                            </div>
                         </div>
                         <div class="my-services">
                             <div class="">
+                                <h3 class="">What I Can Do For You</h3>
                                 <ul class="">
                                     {% for offer in offerings %}
                                         {% if offer.name %}
                                             <li class="">{{ offer.name }}</li>
-                                        {% endfor %}
+                                        {% endif %}
                                     {% endfor %}
-                                    <!-- <li>Bug Bashing</li>
-                                    <li>Email Development</li>
-                                    <li>SEO</li>
-                                    <li>Analytics</li>
-                                    <li>Social Media Management</li>
-                                    <li>Video Editing</li>
-                                    <li>Website Design</li>
-                                    <li>Website Development</li>
-                                    <li>Website Deployment</li>
-                                    <li>Website Management</li>
-                                    <li>Website Maintenance</li> -->
                                 </ul>
                             </div>
                         </div>
                         <div class="work-history">
+                            <h3 class="">Work History</h3>
                             <div class="">
                                 {% for history in work %}
                                     <div class="card">
@@ -101,28 +93,34 @@
                         </div>
                         <div class="current-projects">
                             <div class="">
+                                <h3 class="">Current Projects</h3>
+                                <!-- Figure out page linking below  -->
                                 {% for projects in project %}
                                     <div class="card">
                                         <div class="card-title">
                                             <p class=""></p>
                                         </div>
-                                        {% if projects.image %}
-                                            <div class="card-img"><img alt="{{ skills.name }}" class="skill-img" src="{{ skills.image }}"></div>
+                                        {% if projects.image_url %}
+                                            <div class="card-img"><img alt="{{ projects.name }}" class="skill-img" src="{{ projects.image_url }}"></div>
                                         {% else %}
-                                            <div class="card-img"><img alt="" class="skill-img" src="{{ MEDIA_URL }}noimage.png"></div>
-                                        {% endfor %}
+                                            <div class="card-img"><img alt="{{ projects.name }}" class="skill-img" src="{{ MEDIA_URL }}noimage.png"></div>
+                                        {% endif %}
                                         <div class="card-body">
                                             <p>{{ projects.bio }}</p>
                                         </div>
                                         <div class="card-links">
-                                            <span class="">{{ projects.git_link }}</span>
-                                            <span class="">{{ projects.live_site }}</span>
+                                            {% if projects.git_link %}
+                                                <span class=""><i class="fa-brands fa-github ps-1 pe-1"></i><a class="" href="{{ projects.git_link }}" aria-label="Opens the projects Github" target="_blank">{{ projects.name }}</a></span>
+                                            {% endif %}
+                                            {% if projects.live_site %}
+                                                <span class=""><i class="fa-solid fa-globe ps-1 pe-1"></i><a class="" href="" aria-label="Opens the projects Live website" target="_blank">{{ projects.name }}</a></span>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 {% endfor %}
                             </div>
                         </div>
-                        <div class="contact-me">
+                        <div class="contact-me mt-4">
                             <div class="form">
                                 <form class="contact1-form validate-form" method="POST" enctype="multipart/form-data">
                                     {% csrf_token %}

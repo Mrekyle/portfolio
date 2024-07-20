@@ -23,6 +23,33 @@ ul ,li {
     text-wrap: balance;
 }
 
+.pad-l-5 {
+    padding-left: 30px;
+}
+
+img {
+    max-width: unset;
+}
+
+/* CONTAINERS  */
+
+.container {
+    padding: 4rem 1rem 0rem 1rem;
+    min-height: 95vh;
+}
+
+.about-container {
+    max-height: 560px;
+    padding-top: 3rem;
+}
+
+.cv-container {
+    min-height: 560px;
+    max-height: 560px;
+    padding: 1rem;
+    border: 1px solid black;
+}
+
 /* color:#1a1a1a; */
 
 /* MESSAGES/ALERTS/TOAST */
@@ -54,4 +81,29 @@ ul ,li {
 
 .alert {
     padding: 0;
+}
+
+/* CARDS */
+
+.skill-card {
+    width: 90px;
+    max-height: 120px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border: solid 1px black;
+}
+
+/* IMAGES  */
+
+.my-image {
+    border-radius: 50%;
+    height: 150px;
+    width: 180px;
+}
+
+.skill-img {
+    padding: 5px;
+    height: 80px;
+    width: 80px;
 }

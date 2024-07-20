@@ -11,6 +11,7 @@ class Skill_Cards(models.Model):
     name = models.CharField(max_length=20)
     friendly_name = models.CharField(max_length=20, blank=True, null=True)
     image = models.ImageField(blank=True, null=True)
+    image_url = models.URLField(max_length=1024, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -19,14 +20,14 @@ class Skill_Cards(models.Model):
         return self.friendly_name
 
     class Meta:
-        verbose_name_plural = 'Skill Card Images'
+        verbose_name_plural = 'Skill Cards'
 
 class Offerings(models.Model):
     """
         What can I do for you
     """
 
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=40)
     friendly_name = models.CharField(max_length=20, blank=True, null=True)
 
     def __str__(self):
@@ -46,7 +47,7 @@ class Current_Projects(models.Model):
     name = models.CharField(max_length=100)
     friendly_name = models.CharField(max_length=50, null=True, blank=True)
     bio = models.TextField(max_length=250, blank=True, null=True)
-    image = models.ImageField(blank=True, null=True)
+    image_url = models.URLField(max_length=1028, blank=True, null=True)
     git_link = models.CharField(max_length=100, blank=True, null=True)
     live_site = models.CharField(max_length=100, blank=True, null=True)
 

@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from django.core.mail import send_mail
 
-from .models import Skill_Cards, offerings, Current_Projects, Work_History
+from .models import Skill_Cards, Offerings, Current_Projects, Work_History
 
 # Create your views here.
 
@@ -13,10 +13,10 @@ def index(request):
         Index page
     """
 
-    skills = Skill_Cards
-    offerings = offerings
-    current_projects = Current_Projects
-    work = Work_History
+    skills = Skill_Cards.objects.all()
+    offerings = Offerings.objects.all()
+    current_projects = Current_Projects.objects.all()
+    work = Work_History.objects.all()
 
     if request.method == 'POST':
         email = request.POST.get('email')
