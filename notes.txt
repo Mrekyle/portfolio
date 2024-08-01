@@ -11,6 +11,6 @@ Finish CV Container styling
 
 Style entire website
 
-Build in cloudinary storage for new projects etc..
+Build in cloudinary storage for new projects etc.. Add Cloudinary keys to env file
 
-Finish email functionality
+Finish email functionality - Add Email keys to env file

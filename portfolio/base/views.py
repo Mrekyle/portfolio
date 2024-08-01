@@ -24,6 +24,7 @@ def index(request):
         subject = request.POST.get('subject')
         message = request.POST.get('message')
         subject_line = f"New contact request from {name}"
+        subject_copy = f'Thank you {name}. Here is a copy of your message.'
         send_copy = request.POST.get('send_copy')
 
         contact_email = f"""
@@ -41,7 +42,7 @@ def index(request):
 
         if send_copy == 'on':
             send_mail(
-                subject=subject_line,
+                subject=subject_copy,
                 message=contact_email,
                 from_email=settings.DEFAULT_FROM_EMAIL,
                 recipient_list=[email]
